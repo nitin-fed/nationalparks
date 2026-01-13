@@ -1,12 +1,12 @@
 /** @format */
 
 import { configureStore } from "@reduxjs/toolkit";
-import NationalParksListSlice from "./nationalParksListSlice";
 import authSlice from "./authSlice";
+import parksSlice from "./slices/parksSlice";
 
 export const store = configureStore({
   reducer: {
-    nationlaParksList: NationalParksListSlice,
+    parksList: parksSlice,
     authSlice: authSlice,
   },
 });

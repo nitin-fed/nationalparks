@@ -1,5 +1,11 @@
 /** @format */
 
-export default function Home() {
-  return <div>Home</div>;
-}
+const Home = () => {
+  return (
+    <div className='home-background'>
+      <h2>Home Page</h2>
+    </div>
+  );
+};
+
+export default Home;

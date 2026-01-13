@@ -1,5 +1,17 @@
 /** @format */
 
 body {
-  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.home-background {
+  background-image: url("../src/assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
