@@ -10,7 +10,7 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { Search } from "lucide-react";
 import { fetchParks } from "../../store/slices/parks";
 import { useAppDispatch } from "../../store/hooks";
 import type { ParkFilterBoxProps } from "./interfaces";
@@ -22,12 +22,12 @@ const ParkFilterBox: React.FC<ParkFilterBoxProps> = ({ states, onSearch }) => {
   const dispatch = useAppDispatch();
 
   const handleSearch = () => {
-    onSearch(searchText, selectedState);
+    onSearch(searchText);
   };
 
-  useEffect(() => {
-    dispatch(fetchParks({ page: 1, pageSize: 10, stateCode: selectedState }));
-  }, [dispatch, selectedState]);
+  // useEffect(() => {
+  //   dispatch(fetchParks({ page: 1, pageSize: 10, stateCode: selectedState }));
+  // }, [dispatch, selectedState]);
 
   return (
     <Box
@@ -50,7 +50,7 @@ const ParkFilterBox: React.FC<ParkFilterBoxProps> = ({ states, onSearch }) => {
             endAdornment: (
               <InputAdornment position='end'>
                 <IconButton onClick={handleSearch} edge='end'>
-                  <SearchIcon />
+                  <Search />
                 </IconButton>
               </InputAdornment>
             ),

@@ -24,10 +24,11 @@ interface Props {
 }
 
 const ParkCards: React.FC<Props> = ({ parks }) => {
-  const { data } = parks;
+  console.log(parks);
+
   return (
     <Grid container spacing={3}>
-      {data.map((park, index: number) => (
+      {parks.map((park, index: number) => (
         <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
           <Card
             sx={{

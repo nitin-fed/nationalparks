@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/ContactUs";
 
-import "./app.css";
 import Parks from "./pages/Parks/Parks";
 
 const App = () => {

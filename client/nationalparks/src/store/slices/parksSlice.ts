@@ -1,6 +1,6 @@
 /** @format */
 
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { fetchParks } from "./parks";
 import { US_STATES } from "../../utils/states";
 
@@ -29,7 +29,11 @@ const initialState: Parks = {
 const parksSlice = createSlice({
   name: "parks",
   initialState,
-  reducers: {},
+  reducers: {
+    setPage(state, action: PayloadAction<number>) {
+      state.page = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchParks.pending, (state) => {
@@ -40,14 +44,18 @@ const parksSlice = createSlice({
         state.loading = false;
         state.status = "fulfilled";
         state.totalPages = action.payload["totalPages"];
-        state.list = action.payload;
+        state.list = action.payload["data"];
+        // state.list = [...state.list, ...action.payload["data"]];
+        console.log(state.list);
       })
       .addCase(fetchParks.rejected, (state, action) => {
-        console.log(action);
+        // console.log(action);
         state.loading = false;
         state.error = "Something went wrong";
       });
   },
 });
+
+export const { setPage } = parksSlice.actions;
 
 export default parksSlice.reducer;

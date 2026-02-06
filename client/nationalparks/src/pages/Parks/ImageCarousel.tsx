@@ -1,8 +1,8 @@
 /** @format */
 
 import { Box, CardMedia, IconButton } from "@mui/material";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 const ImageCarousel = ({ images, alt }) => {
@@ -55,7 +55,7 @@ const ImageCarousel = ({ images, alt }) => {
               "&:hover": { bgcolor: "rgba(0,0,0,0.6)" },
             }}
           >
-            <ChevronLeftIcon />
+            <ChevronLeft />
           </IconButton>
 
           {/* Next */}
@@ -71,7 +71,7 @@ const ImageCarousel = ({ images, alt }) => {
               "&:hover": { bgcolor: "rgba(0,0,0,0.6)" },
             }}
           >
-            <ChevronRightIcon />
+            <ChevronRight />
           </IconButton>
         </>
       )}

@@ -20,4 +20,5 @@ export interface FetchParksParams {
   page?: number;
   pageSize?: number;
   stateCode?: string;
+  search?: string;
 }

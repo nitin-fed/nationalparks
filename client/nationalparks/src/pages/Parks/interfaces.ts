@@ -2,7 +2,7 @@
 
 export interface ParkFilterBoxProps {
   states: stateItem[];
-  onSearch: (query: string, state: string) => void;
+  onSearch: (query: string) => void;
 }
 
 type stateItem = {
